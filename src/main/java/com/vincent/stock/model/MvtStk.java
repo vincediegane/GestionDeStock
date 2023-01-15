@@ -9,11 +9,13 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
@@ -31,10 +33,10 @@ public class MvtStk extends AbstractEntity {/**
 	private BigDecimal prixUnitaire;
 	
 	@Column(name = "typemvt")
-	private TypeMvtStk typeMvt;
+//	private TypeMvtStk typeMvt;
+	private String typeMvt;
 	
 	@ManyToOne
 	@JoinColumn(name = "idArticle")
 	private Article article;
-
 }
